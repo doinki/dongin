@@ -1,0 +1,5 @@
+# dongin
+
+```bash
+npx dongin
+```
