@@ -1,0 +1,5 @@
+---
+"dongin": minor
+---
+
+Add figlet

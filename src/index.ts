@@ -1,13 +1,19 @@
-import chalk from 'chalk';
+import { promisify } from 'node:util';
 
-export function run() {
+import chalk from 'chalk';
+import figlet from 'figlet';
+
+const figletAsync = promisify(figlet);
+
+export async function run() {
+  console.log(chalk.gray(await figletAsync('Dongin')));
+  console.log();
+
   [
     ['GitHub', 'https://github.com/doinki'],
     ['Email', 'doinki94@gmail.com'],
   ].forEach(([label, value]) => {
-    console.log(
-      [chalk.gray(label), chalk.cyanBright(value)].join(chalk.gray(' : '))
-    );
+    console.log([label, chalk.cyanBright(value)].join(' : '));
   });
 }
 
